@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Movieku</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_detail">Detail</string>
+    <string name="title_favourite">Favourite</string>
+    <string name="title_activity_splash_screen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
