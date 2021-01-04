@@ -12,7 +12,7 @@ object Apps {
 }
 
 object Modules {
-    const val CORE = ":core"
+    const val CORE = ":libraries:core"
     const val MOVIE = ":presentations:movie"
     const val DETAIL = ":presentations:detail"
 }

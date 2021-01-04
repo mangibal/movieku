@@ -41,7 +41,7 @@ class SplashScreenActivity :
     private val showPart2Runnable = Runnable {
         with(mBinding) {
             // Delayed display of UI elements
-            supportActionBar?.show()
+//            supportActionBar?.show()
             fullscreenContentControls.visibility = View.VISIBLE
         }
     }
@@ -71,7 +71,7 @@ class SplashScreenActivity :
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onInitUI(savedInstanceState: Bundle?) {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         isFullscreen = true
 
         with(mBinding) {
@@ -106,7 +106,7 @@ class SplashScreenActivity :
     private fun hide() {
         with(mBinding) {
             // Hide UI first
-            supportActionBar?.hide()
+//            supportActionBar?.hide()
             fullscreenContentControls.visibility = View.GONE
             isFullscreen = false
 
