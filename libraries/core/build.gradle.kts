@@ -33,19 +33,19 @@ android {
 
 dependencies {
     api("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
-    api("androidx.core:core-ktx:1.3.2")
-    api("androidx.appcompat:appcompat:1.2.0")
-    api("com.google.android.material:material:1.2.1")
+    api("androidx.core:core-ktx:${Versions.ktx}")
+    api("androidx.appcompat:appcompat:${Versions.appcompat}")
+    api("com.google.android.material:material:${Versions.materialDesign}")
 
     // ViewModel
-    api("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    api("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0")
-    api("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}")
+    api("androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.viewModel}")
+    api("androidx.lifecycle:lifecycle-extensions:${Versions.viewModel}")
 
     // Koin AndroidX (Dependency Injection)
-    api("org.koin:koin-androidx-scope:2.1.6")
-    api("org.koin:koin-androidx-viewmodel:2.1.6")
-    api("org.koin:koin-androidx-ext:2.1.6")
+    api("org.koin:koin-androidx-scope:${Versions.koin}")
+    api("org.koin:koin-androidx-viewmodel:${Versions.koin}")
+    api("org.koin:koin-androidx-ext:${Versions.koin}")
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

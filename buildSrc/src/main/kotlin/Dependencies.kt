@@ -20,7 +20,16 @@ object Modules {
 object Versions {
     const val gradle = "4.1.1"
     const val kotlin = "1.4.21"
+    const val ktx = "1.3.2"
+    /* UI */
     const val appcompat = "1.2.0"
+    const val materialDesign = "1.2.1"
+
+    /* ViewModel */
+    const val viewModel = "2.2.0"
+
+    /* Koin - Dependency Injection */
+    const val koin = "2.1.6"
 
     /* test */
     const val junit = "4.13.1"

@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.MotionEvent
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.TextView
-import com.iqbalfauzi.core.BaseActivity
+import com.iqbalfauzi.core.ui.BaseActivity
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
 
 /**

@@ -1,4 +1,4 @@
-package com.iqbalfauzi.core
+package com.iqbalfauzi.core.application
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
