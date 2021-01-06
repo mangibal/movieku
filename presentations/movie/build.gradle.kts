@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
+    id("kotlin-android")
 }
 android {
     compileSdkVersion(Apps.compileSdk)
@@ -42,6 +43,8 @@ android {
 dependencies {
     implementation(project(":app"))
     implementation(project(Modules.CORE))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+    implementation("androidx.appcompat:appcompat:1.2.0")
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

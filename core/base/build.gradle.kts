@@ -33,9 +33,24 @@ android {
 
 dependencies {
     api("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
-    api("androidx.core:core-ktx:${Versions.ktx}")
+    api("androidx.core:core-ktx:${Versions.coreKtx}")
+    /* UI */
     api("androidx.appcompat:appcompat:${Versions.appcompat}")
     api("com.google.android.material:material:${Versions.materialDesign}")
+    api("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
+    api("androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}")
+//    api("androidx.legacy:legacy-support-v4:1.0.0")
+    api("androidx.viewpager2:viewpager2:${Versions.viewPager2}")
+    api("de.hdodenhof:circleimageview:${Versions.circleImageView}")
+//    api("com.android.support:multidex:${Versions.multidex}")
+//    api('androidx.vectordrawable:vectordrawable:1.1.0')
+    // Country Code Picker
+    // Image Loader
+    api("de.hdodenhof:circleimageview:3.1.0")
+    api("io.coil-kt:coil:${Versions.coil}")
+    api("androidx.browser:browser:${Versions.chromeTab}")
+    api("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    api("ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:${Versions.pageIndicator}")
 
     // ViewModel
     api("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}")

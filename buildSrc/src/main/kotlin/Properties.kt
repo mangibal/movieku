@@ -4,7 +4,7 @@
  */
 object Properties {
 
-    const val BASE_URL = "https://api.themoviedb.org/"
+    const val BASE_URL = "https://api.themoviedb.org/3/"
     const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
     /* To create an API key
      * go to "https://www.themoviedb.org/settings/api" after creating an account
