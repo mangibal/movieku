@@ -15,6 +15,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "API_KEY", "\"${Properties.API_KEY}\"")
+        buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
     }
 
     compileOptions {
@@ -24,6 +27,9 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+//    packagingOptions {
+//        exclude("META-INF/metadata.kotlin_module")
+//    }
 }
 
 dependencies {

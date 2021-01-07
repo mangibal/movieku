@@ -20,18 +20,16 @@ android {
 
     android.buildFeatures.viewBinding = true
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            isDebuggable = false
-//            isShrinkResources = true
-//            isZipAlignEnabled = true
-//            isJniDebuggable = false
-//            isRenderscriptDebuggable = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-//            signingConfig = signingConfigs.getByName("release")
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+//    packagingOptions {
+//        exclude("META-INF/metadata.kotlin_module")
+//    }
 }
 
 dependencies {

@@ -1,6 +1,7 @@
 package com.iqbalfauzi.data.remote
 
 import com.iqbalfauzi.data.model.MovieResponse
+import com.skydoves.sandwich.ApiResponse
 
 /**
  * Created by Iqbal Fauzi on 1/6/21 1:29 PM
@@ -8,6 +9,6 @@ import com.iqbalfauzi.data.model.MovieResponse
  */
 interface MovieSource {
 
-    suspend fun getNowPlayingMovie(requestPage: Int = 1): DataResult<MovieResponse>
+    suspend fun getNowPlayingMovie(requestPage: Int = 1): ApiResponse<MovieResponse>
 
 }

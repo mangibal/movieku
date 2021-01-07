@@ -14,7 +14,10 @@ import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
  */
 @Suppress("DEPRECATION")
 class SplashScreenActivity :
-    BaseActivity<ActivitySplashScreenBinding>(ActivitySplashScreenBinding::inflate) {
+    BaseActivity<MainViewModel, ActivitySplashScreenBinding>(
+        MainViewModel::class,
+        ActivitySplashScreenBinding::inflate
+    ) {
 
     private val hideHandler = Handler()
 
@@ -66,6 +69,7 @@ class SplashScreenActivity :
         false
     }
 
+    override fun loadDependencies() = SectionMovieModule.load()
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onInitUI(savedInstanceState: Bundle?) {

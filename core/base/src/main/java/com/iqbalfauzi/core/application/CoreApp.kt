@@ -1,9 +1,11 @@
 package com.iqbalfauzi.core.application
 
 import android.app.Application
+import com.iqbalfauzi.data.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 import org.koin.core.module.Module
 
 /**
@@ -14,25 +16,21 @@ abstract class CoreApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         initializeKoin()
     }
 
     private fun initializeKoin() {
         startKoin {
-
             // Logger for Android
-            androidLogger()
-
+            androidLogger(Level.ERROR)
             // Set the Android Context
             androidContext(this@CoreApp)
-
             modules(listOf(*defaultModules(), *getDataModules()))
         }
     }
 
     private fun defaultModules(): Array<Module> =
-        arrayOf()
+        arrayOf(networkModule)
 
     /**
      * Return the modules for Data (Dao, WebServices)

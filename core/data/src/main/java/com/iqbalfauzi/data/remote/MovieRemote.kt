@@ -1,7 +1,7 @@
 package com.iqbalfauzi.data.remote
 
-import com.iqbalfauzi.data.callApi
 import com.iqbalfauzi.data.model.MovieResponse
+import com.skydoves.sandwich.ApiResponse
 
 /**
  * Created by Iqbal Fauzi on 1/6/21 1:28 PM
@@ -9,7 +9,7 @@ import com.iqbalfauzi.data.model.MovieResponse
  */
 class MovieRemote(private val apiService: ApiService) : MovieSource {
 
-    override suspend fun getNowPlayingMovie(requestPage: Int): DataResult<MovieResponse> =
-        callApi { apiService.getNowPlayingMovie(requestPage) }
+    override suspend fun getNowPlayingMovie(requestPage: Int): ApiResponse<MovieResponse> =
+        apiService.getNowPlayingMovie(requestPage)
 
 }
