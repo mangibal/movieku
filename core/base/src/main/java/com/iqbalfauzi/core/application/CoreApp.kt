@@ -1,6 +1,7 @@
 package com.iqbalfauzi.core.application
 
 import android.app.Application
+import com.iqbalfauzi.data.schedulerModule
 import com.iqbalfauzi.data.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -30,7 +31,7 @@ abstract class CoreApp : Application() {
     }
 
     private fun defaultModules(): Array<Module> =
-        arrayOf(networkModule)
+        arrayOf(schedulerModule, networkModule)
 
     /**
      * Return the modules for Data (Dao, WebServices)

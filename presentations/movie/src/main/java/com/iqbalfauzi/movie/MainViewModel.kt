@@ -3,7 +3,7 @@ package com.iqbalfauzi.movie
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
-import com.iqbalfauzi.core.dispatchers.Dispatcher
+import androidx.lifecycle.switchMap
 import com.iqbalfauzi.core.viewmodel.BaseViewModel
 import com.iqbalfauzi.data.Repository
 import com.iqbalfauzi.data.model.MovieEntity
@@ -12,11 +12,11 @@ import com.iqbalfauzi.data.model.MovieEntity
  * Created by Iqbal Fauzi on 12/24/20 3:15 PM
  * iqbal.fauzi.if99@gmail.com
  */
-class MainViewModel(private val dispatcher: Dispatcher, private val repository: Repository) :
-    BaseViewModel(dispatcher) {
+class MainViewModel(private val repository: Repository) :
+    BaseViewModel() {
 
     private val _movieData: MutableLiveData<List<MovieEntity>> = MutableLiveData()
-    val movieData: LiveData<List<MovieEntity>> = _movieData
+    var movieLiveData: LiveData<List<MovieEntity>> = _movieData
 
     private val _toastLiveData: MutableLiveData<String> = MutableLiveData()
     val toastLiveData: LiveData<String> get() = _toastLiveData

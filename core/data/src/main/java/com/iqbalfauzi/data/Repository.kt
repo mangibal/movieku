@@ -1,12 +1,12 @@
 package com.iqbalfauzi.data
 
-import com.iqbalfauzi.data.dispatchers.AppDispatcher
 import com.iqbalfauzi.data.model.MovieEntity
 import com.iqbalfauzi.data.remote.MovieRemote
 import com.skydoves.sandwich.message
 import com.skydoves.sandwich.onError
 import com.skydoves.sandwich.onException
 import com.skydoves.sandwich.suspendOnSuccess
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.flowOn
  * Created by Iqbal Fauzi on 1/6/21 2:24 PM
  * iqbal.fauzi.if99@gmail.com
  */
-class Repository(private val movieRemote: MovieRemote, private val dispatcher: AppDispatcher) {
+class Repository(private val movieRemote: MovieRemote) {
 
     suspend fun getNowPlayingMovie(
         page: Int = 1,
@@ -41,6 +41,6 @@ class Repository(private val movieRemote: MovieRemote, private val dispatcher: A
             .onException {
                 onError(message())
             }
-    }.flowOn(dispatcher.io)
+    }.flowOn(Dispatchers.IO)
 
 }

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit
  */
 val networkModule = module {
     factory { MovieRemote(get()) }
-    factory { Repository(get(), get()) }
+    factory { Repository(get()) }
     single { provideRetrofit() }
 }
 

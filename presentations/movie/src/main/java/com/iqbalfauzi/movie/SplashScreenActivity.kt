@@ -70,7 +70,9 @@ class SplashScreenActivity :
         false
     }
 
-    override fun loadDependencies() = MovieModule.load()
+    override fun loadDependencies() {
+        MovieModule.load()
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onInitUI(savedInstanceState: Bundle?) {
@@ -88,8 +90,12 @@ class SplashScreenActivity :
 
             with(mViewModel) {
                 getNowPlayingMovie()
-                movieData.observe(this@SplashScreenActivity, {
+                movieLiveData.observe(this@SplashScreenActivity, {
                     println(it)
+                    Toast.makeText(
+                        this@SplashScreenActivity, it.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 })
 
                 toastLiveData.observe(this@SplashScreenActivity, {

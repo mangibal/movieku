@@ -18,12 +18,15 @@ abstract class BaseActivity<out VM : ViewModel, VB : ViewBinding>(
     private val viewBinder: (LayoutInflater) -> ViewBinding
 ) : AppCompatActivity() {
 
-    protected val mViewModel: VM by viewModel(clazz = kClass)
+    protected val mViewModel: VM by viewModel(kClass)
     protected val mBinding by lazy(LazyThreadSafetyMode.NONE) { viewBinder.invoke(layoutInflater) as VB }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
+        if (savedInstanceState == null) {
+            loadDependencies()
+        }
         onInitUI(savedInstanceState)
     }
 
