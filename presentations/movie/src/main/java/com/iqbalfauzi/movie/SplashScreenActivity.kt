@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import com.iqbalfauzi.core.ui.BaseActivity
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
 
@@ -69,7 +70,7 @@ class SplashScreenActivity :
         false
     }
 
-    override fun loadDependencies() = SectionMovieModule.load()
+    override fun loadDependencies() = MovieModule.load()
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onInitUI(savedInstanceState: Bundle?) {
@@ -85,6 +86,30 @@ class SplashScreenActivity :
             // while interacting with the UI.
             mBinding.dummyButton.setOnTouchListener(delayHideTouchListener)
 
+            with(mViewModel) {
+                getNowPlayingMovie()
+                movieData.observe(this@SplashScreenActivity, {
+                    println(it)
+                })
+
+                toastLiveData.observe(this@SplashScreenActivity, {
+                    Toast.makeText(this@SplashScreenActivity, it, Toast.LENGTH_SHORT).show()
+                })
+
+                isLoading.observe(this@SplashScreenActivity, {
+                    if (it) {
+                        Toast.makeText(
+                            this@SplashScreenActivity, "Success",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@SplashScreenActivity, "Failed",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                })
+            }
         }
     }
 

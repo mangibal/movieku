@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.reflect.KClass
 
@@ -19,7 +18,7 @@ abstract class BaseActivity<out VM : ViewModel, VB : ViewBinding>(
     private val viewBinder: (LayoutInflater) -> ViewBinding
 ) : AppCompatActivity() {
 
-    protected val sViewModel: VM by viewModel(kClass)
+    protected val mViewModel: VM by viewModel(clazz = kClass)
     protected val mBinding by lazy(LazyThreadSafetyMode.NONE) { viewBinder.invoke(layoutInflater) as VB }
 
     override fun onCreate(savedInstanceState: Bundle?) {

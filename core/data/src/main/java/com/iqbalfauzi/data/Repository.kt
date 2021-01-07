@@ -21,7 +21,7 @@ class Repository(private val movieRemote: MovieRemote, private val dispatcher: A
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) = flow {
-        var movies: List<MovieEntity> = emptyList()
+        var movies: List<MovieEntity>
         val response = movieRemote.getNowPlayingMovie(page)
         // On Success Call
         response.suspendOnSuccess {

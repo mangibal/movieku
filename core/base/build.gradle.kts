@@ -57,7 +57,11 @@ dependencies {
     api("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
     api("ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:${Versions.pageIndicator}")
 
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}")
+
     // ViewModel
+    api("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-extensions:${Versions.viewModel}")
