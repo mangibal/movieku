@@ -91,7 +91,6 @@ class SplashScreenActivity :
             with(mViewModel) {
                 getNowPlayingMovie()
                 movieData.observe(this@SplashScreenActivity, {
-                    println(it)
                     Toast.makeText(
                         this@SplashScreenActivity, it.toString(),
                         Toast.LENGTH_SHORT

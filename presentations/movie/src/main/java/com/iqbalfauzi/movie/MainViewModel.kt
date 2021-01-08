@@ -34,6 +34,7 @@ class MainViewModel(private val repository: Repository) :
         _isLoading.postValue(true)
         viewModelScope.launch {
             repository.getNowPlayingMovie(1, object : ApiCallback<List<MovieEntity>> {
+
                 override fun onSuccess(data: List<MovieEntity>) {
                     _isLoading.postValue(false)
                     _movieData.postValue(data)

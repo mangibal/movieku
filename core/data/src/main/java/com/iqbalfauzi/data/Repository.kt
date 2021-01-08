@@ -4,6 +4,7 @@ import com.iqbalfauzi.data.model.MovieEntity
 import com.iqbalfauzi.data.remote.MovieRemote
 import com.skydoves.sandwich.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -37,6 +38,6 @@ class Repository(private val movieRemote: MovieRemote) {
             .onException {
                 apiCallback.onException(message())
             }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(Dispatchers.IO).collect()
 
 }
