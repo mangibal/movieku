@@ -2,11 +2,9 @@ package com.iqbalfauzi.data
 
 import com.iqbalfauzi.data.model.MovieEntity
 import com.iqbalfauzi.data.remote.MovieRemote
-import com.skydoves.sandwich.message
-import com.skydoves.sandwich.onError
-import com.skydoves.sandwich.onException
-import com.skydoves.sandwich.suspendOnSuccess
+import com.skydoves.sandwich.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -18,8 +16,7 @@ class Repository(private val movieRemote: MovieRemote) {
 
     suspend fun getNowPlayingMovie(
         page: Int = 1,
-        onSuccess: () -> Unit,
-        onError: (String) -> Unit
+        apiCallback: ApiCallback<List<MovieEntity>>,
     ) = flow {
         var movies: List<MovieEntity>
         val response = movieRemote.getNowPlayingMovie(page)
@@ -28,19 +25,19 @@ class Repository(private val movieRemote: MovieRemote) {
             if (data != null) {
                 movies = data?.results ?: emptyList()
                 emit(movies)
-                onSuccess()
+                apiCallback.onSuccess(movies)
             }
         }
             // handle the case when the API request gets an error response.
             // e.g. internal server error.
             .onError {
-                onError(message())
+                apiCallback.onError(message())
             }
             // handle the case when the API request gets an exception response.
             // e.g. network connection error.
             .onException {
-                onError(message())
+                apiCallback.onException(message())
             }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(Dispatchers.IO).collect()
 
 }

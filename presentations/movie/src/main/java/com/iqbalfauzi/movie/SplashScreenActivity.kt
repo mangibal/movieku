@@ -90,8 +90,7 @@ class SplashScreenActivity :
 
             with(mViewModel) {
                 getNowPlayingMovie()
-                movieLiveData.observe(this@SplashScreenActivity, {
-                    println(it)
+                movieData.observe(this@SplashScreenActivity, {
                     Toast.makeText(
                         this@SplashScreenActivity, it.toString(),
                         Toast.LENGTH_SHORT
@@ -104,15 +103,9 @@ class SplashScreenActivity :
 
                 isLoading.observe(this@SplashScreenActivity, {
                     if (it) {
-                        Toast.makeText(
-                            this@SplashScreenActivity, "Success",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        pbLoading.visibility = View.VISIBLE
                     } else {
-                        Toast.makeText(
-                            this@SplashScreenActivity, "Failed",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        pbLoading.visibility = View.GONE
                     }
                 })
             }
