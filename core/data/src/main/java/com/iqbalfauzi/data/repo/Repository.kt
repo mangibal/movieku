@@ -1,4 +1,4 @@
-package com.iqbalfauzi.data
+package com.iqbalfauzi.data.repo
 
 import com.iqbalfauzi.data.model.MovieEntity
 import com.iqbalfauzi.data.remote.MovieRemote

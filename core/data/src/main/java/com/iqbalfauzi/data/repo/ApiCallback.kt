@@ -1,4 +1,4 @@
-package com.iqbalfauzi.data
+package com.iqbalfauzi.data.repo
 
 /**
  * Created by Iqbal Fauzi on 1/7/21 4:43 PM

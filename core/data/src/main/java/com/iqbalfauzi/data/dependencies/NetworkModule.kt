@@ -1,7 +1,9 @@
-package com.iqbalfauzi.data
+package com.iqbalfauzi.data.dependencies
 
+import com.iqbalfauzi.data.BuildConfig
 import com.iqbalfauzi.data.remote.ApiService
 import com.iqbalfauzi.data.remote.MovieRemote
+import com.iqbalfauzi.data.repo.Repository
 import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

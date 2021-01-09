@@ -2,16 +2,11 @@ package com.iqbalfauzi.movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.iqbalfauzi.core.viewmodel.BaseViewModel
-import com.iqbalfauzi.data.ApiCallback
-import com.iqbalfauzi.data.Repository
-import com.iqbalfauzi.data.dispatchers.Dispatcher
+import com.iqbalfauzi.data.repo.ApiCallback
+import com.iqbalfauzi.data.repo.Repository
 import com.iqbalfauzi.data.model.MovieEntity
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.retry
 import kotlinx.coroutines.launch
 
 /**
