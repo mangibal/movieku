@@ -1,6 +1,7 @@
 package com.iqbalfauzi.data.remote
 
 import com.iqbalfauzi.data.model.MovieResponse
+import com.iqbalfauzi.data.model.detail.Movie
 import com.skydoves.sandwich.ApiResponse
 
 /**
@@ -10,5 +11,6 @@ import com.skydoves.sandwich.ApiResponse
 interface MovieSource {
 
     suspend fun getNowPlayingMovie(requestPage: Int = 1): ApiResponse<MovieResponse>
+    suspend fun getMovie(movieId: Int = 1): ApiResponse<Movie>
 
 }

@@ -1,6 +1,7 @@
 package com.iqbalfauzi.data.remote
 
 import com.iqbalfauzi.data.model.MovieResponse
+import com.iqbalfauzi.data.model.detail.Movie
 import com.skydoves.sandwich.ApiResponse
 
 /**
@@ -11,5 +12,8 @@ class MovieRemote(private val apiService: ApiService) : MovieSource {
 
     override suspend fun getNowPlayingMovie(requestPage: Int): ApiResponse<MovieResponse> =
         apiService.getNowPlayingMovie(requestPage)
+
+    override suspend fun getMovie(movieId: Int): ApiResponse<Movie> =
+        apiService.getMovie(movieId)
 
 }
