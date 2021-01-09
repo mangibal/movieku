@@ -1,8 +1,12 @@
 package com.iqbalfauzi.data
 
 import com.iqbalfauzi.data.model.MovieEntity
+import com.iqbalfauzi.data.model.detail.Movie
 import com.iqbalfauzi.data.remote.MovieRemote
-import com.skydoves.sandwich.*
+import com.skydoves.sandwich.message
+import com.skydoves.sandwich.onError
+import com.skydoves.sandwich.onException
+import com.skydoves.sandwich.suspendOnSuccess
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
@@ -40,4 +44,23 @@ class Repository(private val movieRemote: MovieRemote) {
             }
     }.flowOn(Dispatchers.IO).collect()
 
+    suspend fun getMovie(
+        movieId: Int,
+        onSuccess: () -> Unit,
+        onError: (String?) -> Unit
+    ) = flow {
+        val response = movieRemote.getMovie(movieId)
+        response.suspendOnSuccess {
+            if (data != null) {
+                emit(data)
+                onSuccess()
+            }
+        }
+            .onError {
+                onError(message())
+            }
+            .onException {
+                onError(message())
+            }
+    }.flowOn(Dispatchers.IO)
 }

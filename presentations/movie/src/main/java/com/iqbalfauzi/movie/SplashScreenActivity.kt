@@ -1,6 +1,7 @@
 package com.iqbalfauzi.movie
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.MotionEvent
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.Toast
 import com.iqbalfauzi.core.ui.BaseActivity
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -86,7 +88,20 @@ class SplashScreenActivity :
             // Upon interacting with UI controls, delay any scheduled hide()
             // operations to prevent the jarring behavior of controls going away
             // while interacting with the UI.
-            mBinding.dummyButton.setOnTouchListener(delayHideTouchListener)
+//            mBinding.dummyButton.setOnTouchListener(delayHideTouchListener)
+            mBinding.dummyButton.setOnClickListener {
+//                val launchIntent = packageManager.getLaunchIntentForPackage("com.iqbalfauzi.detail.DetailActivity")
+//                launchIntent?.let { startActivity(it) }
+                try {
+                    val intent = Intent(
+                        this@SplashScreenActivity,
+                        Class.forName("com.iqbalfauzi.detail.DetailActivity")
+                    )
+                    startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
 
             with(mViewModel) {
                 getNowPlayingMovie()
