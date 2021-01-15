@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-val kotlin_version by extra("1.4.21")
+    val kotlin_version by extra("1.4.21")
     //    ext.kotlin_version = "1.4.21"
     repositories {
         google()
@@ -8,10 +8,10 @@ val kotlin_version by extra("1.4.21")
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
-        dependencies {
-            classpath("com.android.tools.build:gradle:${Versions.gradle}")
-            classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
-        }
+        classpath("com.android.tools.build:gradle:${Versions.gradle}")
+//        dependencies {
+//            classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
+//        }
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

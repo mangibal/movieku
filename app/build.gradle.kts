@@ -48,6 +48,11 @@ android {
     }
 
     dynamicFeatures = mutableSetOf(Modules.MOVIE, Modules.DETAIL)
+
+    packagingOptions {
+        exclude("META-INF/metadata.kotlin_module")
+        exclude("META-INF/metadata.jvm.kotlin_module")
+    }
 }
 
 dependencies {

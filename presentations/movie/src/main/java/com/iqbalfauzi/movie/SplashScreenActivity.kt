@@ -1,12 +1,15 @@
 package com.iqbalfauzi.movie
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
 import com.iqbalfauzi.core.ui.BaseActivity
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -14,7 +17,10 @@ import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
  */
 @Suppress("DEPRECATION")
 class SplashScreenActivity :
-    BaseActivity<ActivitySplashScreenBinding>(ActivitySplashScreenBinding::inflate) {
+    BaseActivity<MainViewModel, ActivitySplashScreenBinding>(
+        MainViewModel::class,
+        ActivitySplashScreenBinding::inflate
+    ) {
 
     private val hideHandler = Handler()
 
@@ -66,6 +72,9 @@ class SplashScreenActivity :
         false
     }
 
+    override fun loadDependencies() {
+        MovieModule.load()
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onInitUI(savedInstanceState: Bundle?) {
@@ -79,8 +88,42 @@ class SplashScreenActivity :
             // Upon interacting with UI controls, delay any scheduled hide()
             // operations to prevent the jarring behavior of controls going away
             // while interacting with the UI.
-            mBinding.dummyButton.setOnTouchListener(delayHideTouchListener)
+//            mBinding.dummyButton.setOnTouchListener(delayHideTouchListener)
+            mBinding.dummyButton.setOnClickListener {
+//                val launchIntent = packageManager.getLaunchIntentForPackage("com.iqbalfauzi.detail.DetailActivity")
+//                launchIntent?.let { startActivity(it) }
+                try {
+                    val intent = Intent(
+                        this@SplashScreenActivity,
+                        Class.forName("com.iqbalfauzi.detail.DetailActivity")
+                    )
+                    startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
 
+            with(mViewModel) {
+                getNowPlayingMovie()
+                movieData.observe(this@SplashScreenActivity, {
+                    Toast.makeText(
+                        this@SplashScreenActivity, it.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                })
+
+                toastLiveData.observe(this@SplashScreenActivity, {
+                    Toast.makeText(this@SplashScreenActivity, it, Toast.LENGTH_SHORT).show()
+                })
+
+                isLoading.observe(this@SplashScreenActivity, {
+                    if (it) {
+                        pbLoading.visibility = View.VISIBLE
+                    } else {
+                        pbLoading.visibility = View.GONE
+                    }
+                })
+            }
         }
     }
 

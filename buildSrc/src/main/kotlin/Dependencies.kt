@@ -13,6 +13,8 @@ object Apps {
 
 object Modules {
     const val CORE = ":core:base"
+    const val DATA = ":core:data"
+    const val DOMAIN = ":core:domain"
     const val MOVIE = ":presentations:movie"
     const val DETAIL = ":presentations:detail"
 }

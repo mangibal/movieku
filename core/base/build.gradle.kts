@@ -29,10 +29,15 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+//    packagingOptions {
+//        exclude("META-INF/metadata.kotlin_module")
+//    }
 }
 
 dependencies {
+    implementation(project(Modules.DATA))
     api("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
+    api("org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}")
     api("androidx.core:core-ktx:${Versions.coreKtx}")
     /* UI */
     api("androidx.appcompat:appcompat:${Versions.appcompat}")
@@ -52,7 +57,11 @@ dependencies {
     api("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
     api("ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:${Versions.pageIndicator}")
 
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}")
+
     // ViewModel
+    api("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-extensions:${Versions.viewModel}")

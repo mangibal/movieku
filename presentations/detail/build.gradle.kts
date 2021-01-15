@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
+    id("kotlin-android")
 }
 android {
     compileSdkVersion(Apps.compileSdk)
@@ -20,23 +21,25 @@ android {
 
     android.buildFeatures.viewBinding = true
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            isDebuggable = false
-//            isShrinkResources = true
-//            isZipAlignEnabled = true
-//            isJniDebuggable = false
-//            isRenderscriptDebuggable = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-//            signingConfig = signingConfigs.getByName("release")
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+//    packagingOptions {
+//        exclude("META-INF/metadata.kotlin_module")
+//    }
 }
 
 dependencies {
     implementation(project(":app"))
     implementation(project(Modules.CORE))
+    implementation(project(Modules.DATA))
+//    implementation("androidx.appcompat:appcompat:1.2.0")
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+//    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

@@ -15,14 +15,10 @@
 
     <application>
         <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/Theme.Movieku.Fullscreen"></activity>
-        <activity
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_splash_screen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Movieku.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
