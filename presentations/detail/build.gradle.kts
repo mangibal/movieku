@@ -37,9 +37,9 @@ dependencies {
     implementation(project(":app"))
     implementation(project(Modules.CORE))
     implementation(project(Modules.DATA))
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+//    implementation("androidx.appcompat:appcompat:1.2.0")
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+//    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

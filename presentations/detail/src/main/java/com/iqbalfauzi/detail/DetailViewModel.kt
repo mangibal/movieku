@@ -2,12 +2,10 @@ package com.iqbalfauzi.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.iqbalfauzi.core.viewmodel.BaseViewModel
-import com.iqbalfauzi.data.Repository
 import com.iqbalfauzi.data.model.detail.Movie
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.iqbalfauzi.data.repo.Repository
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.merge

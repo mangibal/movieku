@@ -14,7 +14,7 @@ import kotlin.reflect.KClass
  */
 @Suppress("UNCHECKED_CAST")
 abstract class BaseActivity<out VM : ViewModel, VB : ViewBinding>(
-    kClass: KClass<VM>,
+    kClass: KClass<VM>
     private val viewBinder: (LayoutInflater) -> ViewBinding
 ) : AppCompatActivity() {
 
