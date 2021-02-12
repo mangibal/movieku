@@ -3,7 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
-    id("kotlin-android")
+//    id("kotlin-android")
 }
 android {
     compileSdkVersion(Apps.compileSdk)
@@ -34,13 +34,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":app"))
+    implementation(project(Modules.APP))
     implementation(project(Modules.CORE))
     implementation(project(Modules.DATA))
     implementation(project(Modules.DOMAIN))
-//    implementation("androidx.appcompat:appcompat:1.2.0")
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-//    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+//    implementation(project(Modules.UTILS))
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

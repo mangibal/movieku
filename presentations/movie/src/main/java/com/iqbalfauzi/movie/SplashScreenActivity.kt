@@ -7,7 +7,10 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.iqbalfauzi.core.ui.BaseActivity
+import com.iqbalfauzi.domain.navigation.Screen
+import com.iqbalfauzi.domain.navigation.ScreenRouter
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
+import com.iqbalfauzi.utils.extensions.show
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -48,7 +51,7 @@ class SplashScreenActivity :
         with(mBinding) {
             // Delayed display of UI elements
 //            supportActionBar?.show()
-            fullscreenContentControls.visibility = View.VISIBLE
+            fullscreenContentControls.show()
         }
     }
 
@@ -87,8 +90,8 @@ class SplashScreenActivity :
             lifecycleScope.launch(Dispatchers.IO) {
                 delay(2000)
                 withContext(Dispatchers.Main) {
-                    router.run {
-                        goToActivityClearStack(this@SplashScreenActivity, DETAIL_ACTIVITY)
+                    ScreenRouter.run {
+                        goToActivityClearStack(this@SplashScreenActivity, Screen.MAIN_ACTIVITY)
                     }
                 }
             }
@@ -151,7 +154,7 @@ class SplashScreenActivity :
         with(mBinding) {
             // Hide UI first
 //            supportActionBar?.hide()
-            fullscreenContentControls.visibility = View.GONE
+            fullscreenContentControls.show(false)
             isFullscreen = false
 
             // Schedule a runnable to remove the status and navigation bar after a delay

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.iqbalfauzi.domain.ScreenRouter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.reflect.KClass
 
@@ -21,7 +20,6 @@ abstract class BaseActivity<out VM : ViewModel, VB : ViewBinding>(
 
     protected val mViewModel: VM by viewModel(kClass)
     protected val mBinding by lazy(LazyThreadSafetyMode.NONE) { viewBinder.invoke(layoutInflater) as VB }
-    protected val router: ScreenRouter = ScreenRouter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

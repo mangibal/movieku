@@ -1,4 +1,4 @@
-package com.iqbalfauzi.domain
+package com.iqbalfauzi.domain.navigation
 
 import android.app.Activity
 import android.app.ActivityOptions
@@ -12,10 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
  * iqbal.fauzi.if99@gmail.com
  */
 object ScreenRouter {
-
-    private const val BASE_PACKAGE = "com.iqbalfauzi"
-    private const val DETAIL_MODULE = ".detail"
-    const val DETAIL_ACTIVITY = "$BASE_PACKAGE$DETAIL_MODULE.DetailActivity"
 
     fun Activity.goToActivityForResult(className: String, bundle: Bundle?, requestCode: Int) {
         val i = Intent(this, Class.forName(className))
