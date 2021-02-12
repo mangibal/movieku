@@ -37,7 +37,6 @@ dependencies {
     implementation(project(Modules.APP))
     implementation(project(Modules.CORE))
     implementation(project(Modules.DATA))
-    implementation(project(Modules.UTILS))
     implementation(project(Modules.DOMAIN))
 
     testImplementation("junit:junit:4.13.1")
