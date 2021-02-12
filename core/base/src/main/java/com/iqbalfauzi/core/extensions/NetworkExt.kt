@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils
+package com.iqbalfauzi.core.extensions
 
 import android.app.Activity
 import android.content.Context
@@ -7,6 +7,7 @@ import android.net.ConnectivityManager
 import android.net.Uri
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.net.toUri
+import com.iqbalfauzi.core.R
 
 /**
  * Created by Iqbal Fauzi on 2/12/21 9:37 PM

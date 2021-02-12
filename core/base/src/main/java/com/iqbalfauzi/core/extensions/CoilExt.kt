@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils.extensions
+package com.iqbalfauzi.core.extensions
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,8 +7,7 @@ import android.widget.ImageView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import com.iqbalfauzi.utils.R
-import com.iqbalfauzi.utils.getColorCompat
+import com.iqbalfauzi.core.R
 
 /**
  * Created by Iqbal Fauzi on 2/12/21 9:25 PM

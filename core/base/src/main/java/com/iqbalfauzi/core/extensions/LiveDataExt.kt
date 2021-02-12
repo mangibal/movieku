@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils
+package com.iqbalfauzi.core.extensions
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

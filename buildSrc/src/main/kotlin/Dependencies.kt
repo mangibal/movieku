@@ -16,7 +16,6 @@ object Modules {
     const val CORE = ":core:base"
     const val DATA = ":core:data"
     const val DOMAIN = ":core:domain"
-    const val UTILS = ":core:utils"
     const val MOVIE = ":presentations:movie"
     const val DETAIL = ":presentations:detail"
 }

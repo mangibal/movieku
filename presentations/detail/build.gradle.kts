@@ -38,7 +38,6 @@ dependencies {
     implementation(project(Modules.CORE))
     implementation(project(Modules.DATA))
     implementation(project(Modules.DOMAIN))
-//    implementation(project(Modules.UTILS))
 
     testImplementation("junit:junit:4.13.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

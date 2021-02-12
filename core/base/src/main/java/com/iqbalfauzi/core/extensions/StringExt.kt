@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils
+package com.iqbalfauzi.core.extensions
 
 import android.content.ClipData
 import android.content.ClipboardManager

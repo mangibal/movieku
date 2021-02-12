@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils.extensions
+package com.iqbalfauzi.core.extensions
 
 import android.view.View
 

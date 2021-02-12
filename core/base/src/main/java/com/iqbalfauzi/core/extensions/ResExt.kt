@@ -1,4 +1,4 @@
-package com.iqbalfauzi.utils
+package com.iqbalfauzi.core.extensions
 
 import android.content.Context
 import android.graphics.PorterDuff
