@@ -1,4 +1,3 @@
-include(":core:utils")
-include(":core:base", ":core:data", ":core:domain")
+include(":core:base", ":core:data", ":core:domain", ":core:utils")
 include(":app", ":presentations:movie", ":presentations:detail")
 rootProject.name = "Movieku"

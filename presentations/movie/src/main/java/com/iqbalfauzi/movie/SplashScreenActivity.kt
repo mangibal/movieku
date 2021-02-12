@@ -10,7 +10,7 @@ import com.iqbalfauzi.core.ui.BaseActivity
 import com.iqbalfauzi.domain.navigation.Screen
 import com.iqbalfauzi.domain.navigation.ScreenRouter
 import com.iqbalfauzi.movie.databinding.ActivitySplashScreenBinding
-import com.iqbalfauzi.utils.extensions.show
+import com.iqbalfauzi.core.extensions.show
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
