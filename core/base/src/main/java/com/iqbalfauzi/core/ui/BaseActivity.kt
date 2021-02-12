@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.iqbalfauzi.domain.ScreenRouter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.reflect.KClass
 
@@ -14,12 +15,13 @@ import kotlin.reflect.KClass
  */
 @Suppress("UNCHECKED_CAST")
 abstract class BaseActivity<out VM : ViewModel, VB : ViewBinding>(
-    kClass: KClass<VM>
+    kClass: KClass<VM>,
     private val viewBinder: (LayoutInflater) -> ViewBinding
 ) : AppCompatActivity() {
 
     protected val mViewModel: VM by viewModel(kClass)
     protected val mBinding by lazy(LazyThreadSafetyMode.NONE) { viewBinder.invoke(layoutInflater) as VB }
+    protected val router: ScreenRouter = ScreenRouter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(project(Modules.DATA))
+    implementation(project(Modules.DOMAIN))
     api("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
     api("org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}")
     api("androidx.core:core-ktx:${Versions.coreKtx}")
@@ -63,6 +64,7 @@ dependencies {
     // ViewModel
     api("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}")
+    api("androidx.lifecycle:lifecycle-runtime-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.viewModel}")
     api("androidx.lifecycle:lifecycle-extensions:${Versions.viewModel}")
 

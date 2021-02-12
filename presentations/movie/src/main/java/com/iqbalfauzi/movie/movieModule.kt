@@ -22,5 +22,5 @@ object MovieModule : BaseModule {
 }
 
 val movieModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { MainViewModel() }
 }

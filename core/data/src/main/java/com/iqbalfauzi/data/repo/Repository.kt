@@ -42,7 +42,7 @@ class Repository(private val movieRemote: MovieRemote) {
             .onException {
                 apiCallback.onException(message())
             }
-    }.flowOn(Dispatchers.IO).collect()
+    }.flowOn(Dispatchers.IO)
 
     suspend fun getMovie(
         movieId: Int,

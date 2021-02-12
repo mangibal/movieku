@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.iqbalfauzi.core.viewmodel.BaseViewModel
+import com.iqbalfauzi.data.model.MovieEntity
 import com.iqbalfauzi.data.model.detail.Movie
 import com.iqbalfauzi.data.repo.Repository
+import com.iqbalfauzi.domain.MovieDataMapper.toUiData
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.merge
@@ -28,14 +30,14 @@ class DetailViewModel(private val repository: Repository) : BaseViewModel() {
     fun getMovie(movieId: Int) {
         _isLoading.postValue(true)
         viewModelScope.launch(viewModelScope.coroutineContext) {
-            val first = repository.getMovie(556,
+            val first = repository.getMovie(464052,
                 {
                     _isLoading.postValue(false)
                 }, {
                     _isLoading.postValue(false)
                     _messageLiveData.postValue(it)
                 })
-            val second = repository.getMovie(550,
+            val second = repository.getMovie(464053,
                 {
                     _isLoading.postValue(false)
                 }, {

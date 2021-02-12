@@ -38,7 +38,7 @@ class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBinding>(
                     mBinding.progressBar.visibility = View.GONE
                 }
             })
-            getMovie(550)
+            getMovie(464052)
         }
     }
 }

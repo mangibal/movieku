@@ -20,7 +20,7 @@ object Modules {
 }
 
 object Versions {
-    const val gradle = "4.1.1"
+    const val gradle = "4.1.2"
     const val kotlin = "1.4.21"
     const val multidex = "1.0.3"
     /* KTX */
