@@ -1,6 +1,7 @@
 package com.iqbalfauzi.movie
 
 import com.iqbalfauzi.core.dependencies.BaseModule
+import com.iqbalfauzi.movie.movie.MovieViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -23,4 +24,5 @@ object MovieModule : BaseModule {
 
 val movieModule = module {
     viewModel { MainViewModel() }
+    viewModel { MovieViewModel() }
 }
